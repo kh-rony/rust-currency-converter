@@ -33,7 +33,7 @@ convert <from_currency> <to_currency> <amount>
 
 ```
 bash release.sh
-./convert.exe eur usd 1000
+./convert eur usd 1000
 ```
 
 ## Examples
