@@ -27,20 +27,14 @@ convert <from_currency> <to_currency> <amount>
 1. Go to [www.exchangerate-api.com](https://www.exchangerate-api.com/)
 2. Create a free account using your email. You will get your own API key.
 3. Create an `.env` file.
-4. Provide your API key in `.env` file as `EXCHANGERATE_API_KEY`, (see `.env.example` file).
+4. Provide your API key in `.env` file as `EXCHANGERATE_API_KEY`, (see `.env.example`)
 
 ## Release and Run
 
-1. To run in Unix machine:
-   ```
-   bash release.sh
-   ./convert eur usd 1000
-   ```
-2. To run in Windows machine:
-   ```
-   bash release.sh
-   ./convert.exe eur usd 1000
-   ```
+```
+bash release.sh
+./convert.exe eur usd 1000
+```
 
 ## Examples
 ```
