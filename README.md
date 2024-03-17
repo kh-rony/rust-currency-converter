@@ -19,7 +19,7 @@
 ## Usage
 
 ```
-convert <from_currency> <to_currency> <amount>
+rust-currency-converter <from_currency> <to_currency> <amount>
 ```
 
 ## Configure ExchangeRate API key
@@ -33,12 +33,12 @@ convert <from_currency> <to_currency> <amount>
 
 ```
 bash release.sh
-./convert eur usd 1000
+./rust-currency-converter eur usd 1000
 ```
 
 ## Examples
 ```
-./convert eur usd 1000
+./rust-currency-converter eur usd 1000
 Converted amount: 1092.300 USD
 [ Exchange Rate: 1 EUR = 1.0923 USD ]
 ```

@@ -1,3 +1,3 @@
 cargo clean
 cargo build --release
-cp target/release/convert .
+cp target/release/rust-currency-converter .

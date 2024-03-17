@@ -1,5 +1,4 @@
 /.idea
 /target
 .env
-convert
-*.exe
+rust-currency-converter*
