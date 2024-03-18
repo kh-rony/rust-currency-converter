@@ -20,3 +20,31 @@ impl<T: ExchangeRateProvider> CurrencyConverter<T> {
         Ok(conversion_rate)
     }
 }
+
+
+#[cfg(test)]
+mod tests {
+    use crate::converter::CurrencyConverter;
+    use crate::exchange_rate::ApiExchangeRateProvider;
+
+    #[tokio::test]
+    fn test_invalid_input() {
+        let currency_converter = CurrencyConverter::new(ApiExchangeRateProvider::new("https://v6.exchangerate-api.com/v6", "108d1196ef2513db69e7a424"));
+        let convertion_rate = currency_converter.get_conversion_rate("INVALID", "EUR");
+        assert_eq!(convertion_rate, 0.0);
+    }
+
+    #[tokio::test]
+    fn test_unsupported_currencies() {
+        let currency_converter = CurrencyConverter::new(ApiExchangeRateProvider::new("https://v6.exchangerate-api.com/v6", "108d1196ef2513db69e7a424"));
+        let convertion_rate = currency_converter.get_conversion_rate("EUR", "UNSUPPORTED");
+        assert_eq!(convertion_rate, 0.0);
+    }
+
+    #[tokio::test]
+    fn test_edge_cases() {
+        let currency_converter = CurrencyConverter::new(ApiExchangeRateProvider::new("https://v6.exchangerate-api.com/v6", "108d1196ef2513db69e7a424"));
+        let convertion_rate = currency_converter.get_conversion_rate("EUR", "USD");
+        assert_eq!(convertion_rate, 0.0);
+    }
+}
